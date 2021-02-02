@@ -1,18 +1,14 @@
 import java.util.Scanner;
 
-public class Main50 {
+public class Main53 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in); 
+		int iNum = sc.nextInt();
 		
-		while(true) {
-			int iNum = sc.nextInt();
-			
-			if(iNum==0) {
-				break;
-			}
+		while(iNum > 0) {
 			System.out.println(iNum);
+			iNum--;
 		}
-		
 	}
 }
