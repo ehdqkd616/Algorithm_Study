@@ -4,28 +4,34 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main99 {
+public class Main135 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     
-        String[] arr = new String[2];
+		double a = Double.parseDouble(br.readLine());
+		int b = Integer.parseInt(br.readLine());
+
+		double c = a;
+		
+        String[] arr = new String[b];
         arr = br.readLine().split(" ");
         
-		int a = Integer.parseInt(arr[0]);
-		int b = Integer.parseInt(arr[1]);
-		int x = 0;
-		String result = null;
-		
-		if(b%a==0) {
-			x = b/a;
-			result = String.valueOf(a)+"*"+String.valueOf(x)+"="+String.valueOf(b);
+        for(int i=0; i<b; i++) {
+    		c = c + (c*Double.parseDouble(arr[i]))/100;
+        }
+        
+        int result = (int) (Math.round(c)-a);
+        
+        if(result>0) {
+			bw.write(result+"\n"+"good");
+		}else if(Math.round(c)-a==0) {
+			bw.write(result+"\n"+"same");
 		}else {
-			result = "none";
+			bw.write(result+"\n"+"bad");
 		}
 		
-		bw.write(result);
 		
 		bw.flush();
 		bw.close();

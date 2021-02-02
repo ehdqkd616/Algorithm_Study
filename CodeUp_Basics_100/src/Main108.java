@@ -4,33 +4,22 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main99 {
+public class Main108 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    
-        String[] arr = new String[2];
-        arr = br.readLine().split(" ");
-        
-		int a = Integer.parseInt(arr[0]);
-		int b = Integer.parseInt(arr[1]);
-		int x = 0;
-		String result = null;
-		
-		if(b%a==0) {
-			x = b/a;
-			result = String.valueOf(a)+"*"+String.valueOf(x)+"="+String.valueOf(b);
-		}else {
-			result = "none";
+
+		int num = Integer.parseInt(br.readLine());
+
+		for(int i = 1; i <= num; i++) {
+			bw.write(String.valueOf(i)+" ");
 		}
-		
-		bw.write(result);
 		
 		bw.flush();
 		bw.close();
 		br.close();
-		
+
 	}
 
 }

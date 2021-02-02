@@ -4,28 +4,36 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main99 {
+public class Main100 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     
-        String[] arr = new String[2];
+        String[] arr = new String[4];
         arr = br.readLine().split(" ");
         
 		int a = Integer.parseInt(arr[0]);
 		int b = Integer.parseInt(arr[1]);
-		int x = 0;
-		String result = null;
+		int c = Integer.parseInt(arr[2]);
+		int d = Integer.parseInt(arr[3]);
 		
-		if(b%a==0) {
-			x = b/a;
-			result = String.valueOf(a)+"*"+String.valueOf(x)+"="+String.valueOf(b);
-		}else {
-			result = "none";
+		int result = a+b+c+d;
+		
+		String resultStr = null;
+		if(result==0) {
+			resultStr = "¸ð";
 		}
+		else if(result==1) {
+			resultStr = "µµ";
+		}else if(result==2) {
+			resultStr = "°³";
+		}else if(result==3) {
+			resultStr = "°É";
+		}else if(result==4)
+			resultStr = "À·";
 		
-		bw.write(result);
+		bw.write(resultStr);
 		
 		bw.flush();
 		bw.close();

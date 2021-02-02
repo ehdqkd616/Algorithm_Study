@@ -4,28 +4,31 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main99 {
+public class Main126 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    
-        String[] arr = new String[2];
-        arr = br.readLine().split(" ");
         
-		int a = Integer.parseInt(arr[0]);
-		int b = Integer.parseInt(arr[1]);
-		int x = 0;
-		String result = null;
+		int a = Integer.parseInt(br.readLine());
+		int i = 2;
 		
-		if(b%a==0) {
-			x = b/a;
-			result = String.valueOf(a)+"*"+String.valueOf(x)+"="+String.valueOf(b);
-		}else {
-			result = "none";
+		boolean flag = false;
+		
+		
+		while(i<a) {
+			if(a%i==0) {
+				flag = true;
+				break;
+			}
+			i++;
 		}
 		
-		bw.write(result);
+		if(flag) {
+			bw.write("not prime");
+		}else {
+			bw.write("prime");
+		}
 		
 		bw.flush();
 		bw.close();

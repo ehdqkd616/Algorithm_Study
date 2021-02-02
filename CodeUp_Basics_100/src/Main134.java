@@ -4,28 +4,27 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main99 {
+public class Main134 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    
-        String[] arr = new String[2];
-        arr = br.readLine().split(" ");
         
-		int a = Integer.parseInt(arr[0]);
-		int b = Integer.parseInt(arr[1]);
-		int x = 0;
-		String result = null;
+		int n = Integer.parseInt(br.readLine());
+		int k = 1;
+		int squareI;
+		double squareD;
 		
-		if(b%a==0) {
-			x = b/a;
-			result = String.valueOf(a)+"*"+String.valueOf(x)+"="+String.valueOf(b);
-		}else {
-			result = "none";
+		while(true) {
+			squareI = (int)Math.sqrt(n-k);
+			squareD = Math.sqrt(n-k);
+			if(squareI == squareD) {
+				break;
+			}
+			k++;
 		}
 		
-		bw.write(result);
+		bw.write(String.valueOf(k)+" "+String.valueOf(squareI));
 		
 		bw.flush();
 		bw.close();

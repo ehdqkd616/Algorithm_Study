@@ -4,28 +4,28 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main99 {
+public class Main117 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     
-        String[] arr = new String[2];
+        String[] arr = new String[10];
         arr = br.readLine().split(" ");
         
-		int a = Integer.parseInt(arr[0]);
-		int b = Integer.parseInt(arr[1]);
-		int x = 0;
-		String result = null;
+		int result = 0;
 		
-		if(b%a==0) {
-			x = b/a;
-			result = String.valueOf(a)+"*"+String.valueOf(x)+"="+String.valueOf(b);
-		}else {
-			result = "none";
+		int i = 0;
+		
+		while(i<10) {
+			if(Integer.parseInt(arr[i])%5==0) {
+				result = Integer.parseInt(arr[i]);
+				break;
+			}
+			i++;
 		}
 		
-		bw.write(result);
+		bw.write(String.valueOf(result));
 		
 		bw.flush();
 		bw.close();
@@ -34,3 +34,4 @@ public class Main99 {
 	}
 
 }
+

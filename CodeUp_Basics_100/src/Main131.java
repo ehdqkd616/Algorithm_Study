@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main99 {
+public class Main131 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,17 +15,18 @@ public class Main99 {
         
 		int a = Integer.parseInt(arr[0]);
 		int b = Integer.parseInt(arr[1]);
-		int x = 0;
-		String result = null;
 		
-		if(b%a==0) {
-			x = b/a;
-			result = String.valueOf(a)+"*"+String.valueOf(x)+"="+String.valueOf(b);
-		}else {
-			result = "none";
+		int result = 0;
+		
+		for(int i = a; i<=b; i++) {
+			if(i%2==0) {
+				result -= i;
+			}else{
+				result += i;
+			}
 		}
 		
-		bw.write(result);
+		bw.write(String.valueOf(result));
 		
 		bw.flush();
 		bw.close();
