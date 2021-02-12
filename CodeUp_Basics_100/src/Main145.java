@@ -4,19 +4,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main139 {
+public class Main145 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        
-		int a = Integer.parseInt(br.readLine());
+    
+		int n = Integer.parseInt(br.readLine());
 		
-		for(int i = a; i>0; i--) {
-			for(int j = i; j>0; j--) {
-				bw.write("*");
-			}
-			bw.write("\n");
+        String[] arr = new String[n];
+        arr = br.readLine().split(" ");
+        
+		for(int i = 0; i < n; i++) {
+			bw.write(arr[n-i-1]+" ");
 		}
 		
 		bw.flush();
