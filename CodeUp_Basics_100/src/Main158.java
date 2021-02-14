@@ -17,9 +17,9 @@ public class Main158 {
 		for(int i = 0; i < n; i++) {
 			for(int j = 0; j < n; j++) {
 				if(j%2==0) {
-					arr[i][j] = n*(j)+i+1;
+					arr[i][j] = n*(j+1)-(i);
 				}else if(j%2!=0) {
-					arr[i][j] = n*(j+1)-i;
+					arr[i][j] = n*(j)+(i+1);
 				}
 				bw.write(String.valueOf(arr[i][j]+" "));
 			}
